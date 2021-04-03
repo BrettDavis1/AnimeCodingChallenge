@@ -31,11 +31,6 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvFavorites.layoutManager = LinearLayoutManager(this.context)
-        if (viewModel.favoriteAnimes.value != null) {
-
-        } else {
-
-        }
         val listener: AnimeListener = object : AnimeListener {
             override fun itemClicked(anime: Anime) {
                 val action = FavoritesFragmentDirections.actionFavoritesFragmentToAnimeInfoFragment(anime,"Anime from Favorites")
@@ -46,7 +41,7 @@ class FavoritesFragment : Fragment() {
                 viewModel.deleteAnime(anime)
             }
         }
-        viewModel.favoriteAnimes.observe(this.viewLifecycleOwner, Observer {
+        viewModel.favoriteAnimes.observe(this.viewLifecycleOwner, {
             binding.rvFavorites.layoutManager= LinearLayoutManager(this.context)
             binding.rvFavorites.adapter = it?.let{ animes ->
                 AnimeAdapter(animes, listener, true)

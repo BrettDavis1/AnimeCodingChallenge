@@ -3,10 +3,13 @@ package com.example.animecodingchallenge.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.animecodingchallenge.R
 import com.example.animecodingchallenge.databinding.AnimeItemBinding
 import com.example.animecodingchallenge.model.Anime
 import com.squareup.picasso.Picasso
+import kotlin.coroutines.coroutineContext
 
 class AnimeAdapter(val animes: List<Anime>, private val listener: AnimeListener, val isFavList : Boolean) :
     RecyclerView.Adapter<AnimeAdapter.AnimeHolder>() {
@@ -31,19 +34,19 @@ class AnimeAdapter(val animes: List<Anime>, private val listener: AnimeListener,
                 root.setOnClickListener {
                     listener.itemClicked(anime)
                 }
-                if(isFavList) btnFavorite.text = "Unfavorite"
-                tvScore.text = "Score: ${anime.score.toString()}"
-                tvTitle.text = "Title: ${anime.title}"
-                tvType.text = "Type: ${anime.type}"
+                if(isFavList) btnFavorite.text = root.context.getString(R.string.unfavorite)
+                tvScore.text = root.context.getString(R.string.tv_score ,anime.score)
+                tvTitle.text = root.context.getString(R.string.tv_title ,anime.title)
+                tvType.text = root.context.getString(R.string.tv_type ,anime.type)
                 // need a way to know if anime is already a favorite
                 btnFavorite.setOnClickListener {
                     Log.i("AnimeAdapter", "setAnime: ${btnFavorite.text}")
-                    if(btnFavorite.text.toString().equals("Favorite", true)) {
+                    if(btnFavorite.text.toString().equals(root.context.getString(R.string.favorite), true)) {
                         listener.favoriteClicked(false, anime)
-                        btnFavorite.text = "Unfavorite"
+                        btnFavorite.text = root.context.getString(R.string.unfavorite)
                     } else {
                         listener.favoriteClicked(true, anime)
-                        btnFavorite.text = "Favorite"
+                        btnFavorite.text = root.context.getString(R.string.favorite)
                     }
                 }
                 Picasso.get().load(anime.imageUrl).into(ivAnime)

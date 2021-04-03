@@ -24,12 +24,12 @@ class AnimeInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            tvTitle.text = "Title: ${argument.selectedAnime.title}"
-            tvEndDate.text = "End Date: ${argument.selectedAnime.endDate}"
-            tvStartDate.text = "Start Date: ${argument.selectedAnime.startDate}"
-            tvScore.text = "Score: ${argument.selectedAnime.score.toString()}"
-            tvType.text = "Type: ${argument.selectedAnime.type}"
-            tvSynopsis.text = "Synopsis: ${argument.selectedAnime.synopsis}"
+            tvTitle.text = getString(R.string.tv_title, argument.selectedAnime.title)
+            tvEndDate.text = getString(R.string.tv_title, argument.selectedAnime.endDate)
+            tvStartDate.text = getString(R.string.tv_start_date, argument.selectedAnime.startDate)
+            tvScore.text = getString(R.string.tv_score, argument.selectedAnime.score)
+            tvType.text = getString(R.string.tv_type, argument.selectedAnime.type)
+            tvSynopsis.text = getString(R.string.tv_synopsis, argument.selectedAnime.synopsis)
             Picasso.get().load(argument.selectedAnime.imageUrl).into(ivAnime)
         }
     }

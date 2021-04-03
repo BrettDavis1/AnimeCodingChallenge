@@ -30,7 +30,7 @@ class SearchAnimeFragment : Fragment() {
             // Could change what we get from viewmodel to results(animes) to what we get so this would only run if we animes
             // instead of animeResponse
             // this could be bad but idea is wait until we have animeResponse to go to next fragment
-            viewModel.animeResponse.observe(this.viewLifecycleOwner, Observer { animeResponse ->
+            viewModel.animeResponse.observe(this.viewLifecycleOwner, { animeResponse ->
                 val action = SearchAnimeFragmentDirections.actionSearchAnimeFragmentToAnimesBySearch(animeResponse, binding.etCharacter.text.toString())
                 findNavController().navigate(action)
             })
