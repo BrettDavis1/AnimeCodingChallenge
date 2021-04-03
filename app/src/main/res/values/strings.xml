@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">AnimeCodingChallenge</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorite">Favorite</string>
+    <string name="my_favorites">My Favorites</string>
+    <string name="search">Search</string>
+</resources>
+
+    <!--
+    ~ Copyright (C) 2019 The Android Open Source Project
+    ~
+    ~ Licensed under the Apache License, Version 2.0 (the "License");
+    ~ you may not use this file except in compliance with the License.
+    ~ You may obtain a copy of the License at
+    ~
+    ~      http://www.apache.org/licenses/LICENSE-2.0
+    ~
+    ~ Unless required by applicable law or agreed to in writing, software
+    ~ distributed under the License is distributed on an "AS IS" BASIS,
+    ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    ~ See the License for the specific language governing permissions and
+    ~ limitations under the License.
+    -->
+
+<!--<resources>-->
+
+<!--&lt;!&ndash;Shape&ndash;&gt;-->
+
+<!--&lt;!&ndash;Material allows theming of a component’s shape through the customization of corner &ndash;&gt;-->
+<!--&lt;!&ndash;style and radius size. To systematically apply shape throughout your app, it helps to &ndash;&gt;-->
+<!--&lt;!&ndash;understand that components are categorized by size, grouped into categories of small, &ndash;&gt;-->
+<!--&lt;!&ndash;medium and large. Each component size group can be themed by overriding the Material &ndash;&gt;-->
+<!--&lt;!&ndash;Components attributes ?shapeAppearanceSmallComponent, ?shapeAppearanceMediumComponent &ndash;&gt;-->
+<!--&lt;!&ndash;and ?shapeAppearanceLargeComponent in your app's theme. Those attributes are already &ndash;&gt;-->
+<!--&lt;!&ndash;defined as default styles overridden for you in themes.xml and point to the styles in &ndash;&gt;-->
+<!--&lt;!&ndash;this file.&ndash;&gt;-->
+
+<!--&lt;!&ndash;Experiment with ShapeAppearance properties such as cornerFamily (either ‘cut’ or &ndash;&gt;-->
+<!--&lt;!&ndash;‘rounded’) and corner size. Alternatively, customize each ShapeAppearance on a &ndash;&gt;-->
+<!--&lt;!&ndash;per-corner basis with cornerFamilyTopLeft, cornerFamilyTopRight, cornerFamilyBottomLeft, &ndash;&gt;-->
+<!--&lt;!&ndash;cornerFamilyBottomRight and cornerSizeTopRight, cornerSizeTopLeft, cornerSizeBottomLeft &ndash;&gt;-->
+<!--&lt;!&ndash;and cornerSizeBottomRight.&ndash;&gt;-->
+
+<!--&lt;!&ndash;Shape Appearance for small components like chips, buttons, text fields and FABs&ndash;&gt;-->
+<!--<style name="ShapeAppearance.MyTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">-->
+<!--    &lt;!&ndash;Your custom shape here&ndash;&gt;-->
+<!--    <item name="cornerFamily">rounded</item>-->
+<!--    <item name="cornerSize">10dp</item>-->
+<!--</style>-->
+
+<!--&lt;!&ndash;Shape Appearance for medium components like cards, alert dialogs&ndash;&gt;-->
+<!--<style name="ShapeAppearance.MyTheme.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">-->
+<!--    &lt;!&ndash;Your custom shape here&ndash;&gt;-->
+<!--    <item name="cornerFamily">cut</item>-->
+<!--    <item name="cornerSize">10dp</item>-->
+<!--</style>-->
+
+<!--&lt;!&ndash;Shape Appearance for large components like side and bottom navigation drawers&ndash;&gt;-->
+<!--<style name="ShapeAppearance.MyTheme.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">-->
+<!--    &lt;!&ndash;Your custom shape here&ndash;&gt;-->
+<!--    <item name="cornerFamily">cut</item>-->
+<!--    <item name="cornerSize">25dp</item>-->
+<!--</style>-->
+
+<!--&lt;!&ndash;Shape Appearance overlay for ShapeableImageView &ndash;&gt;-->
+<!--<style name="ShapeAppearanceOverlay.MyTheme.Image" parent="">-->
+<!--    <item name="cornerSize">0dp</item>-->
+<!--    <item name="cornerSizeTopLeft">50%</item>-->
+<!--</style>-->
+
+<!--</resources>-->

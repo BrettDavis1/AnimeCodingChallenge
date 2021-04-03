@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchAnimeFragment">
+    <fragment
+        android:id="@+id/searchAnimeFragment"
+        android:name="com.example.animecodingchallenge.view.SearchAnimeFragment"
+        android:label="fragment_search_anime"
+        tools:layout="@layout/fragment_search_anime" >
+        <action
+            android:id="@+id/action_searchAnimeFragment_to_animesBySearch"
+            app:destination="@id/animesBySearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animesBySearchFragment"
+        android:name="com.example.animecodingchallenge.view.AnimesBySearchFragment"
+        android:label="fragment_animes_by_search"
+        tools:layout="@layout/fragment_animes_by_search" >
+        <action
+            android:id="@+id/action_animesBySearch_to_animeInfo"
+            app:destination="@id/animeInfoFragment" />
+        <argument
+            android:name="animes"
+            app:argType="com.example.animecodingchallenge.model.AnimeResponse" />
+        <argument
+            android:name="character"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_animesBySearchFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animeInfoFragment"
+        android:name="com.example.animecodingchallenge.view.AnimeInfoFragment"
+        android:label="fragment_anime_info"
+        tools:layout="@layout/fragment_anime_info" >
+        <argument
+            android:name="selectedAnime"
+            app:argType="com.example.animecodingchallenge.model.Anime" />
+        <argument
+            android:name="character"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.animecodingchallenge.view.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_animeInfoFragment"
+            app:destination="@id/animeInfoFragment" />
+    </fragment>
+</navigation>
