@@ -6,15 +6,19 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.animecodingchallenge.model.Anime
 import com.example.animecodingchallenge.repo.AnimeRepo
+import com.example.animecodingchallenge.repo.AnimeRepoHilt
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class FavoritesFragmentViewModel(application: Application) : AndroidViewModel(application) {
-    val favoriteAnimes = AnimeRepo.getFavoriteAnimes(application.applicationContext).asLiveData(viewModelScope.coroutineContext)
+@HiltViewModel
+class FavoritesFragmentViewModel @Inject constructor(private val repo: AnimeRepoHilt, application: Application): AndroidViewModel(application) {
+    val favoriteAnimes = repo.getFavoriteAnimes(application.applicationContext).asLiveData(viewModelScope.coroutineContext)
 
     fun deleteAnime(anime: Anime) {
         viewModelScope.launch(Dispatchers.IO) {
-            AnimeRepo.deleteAnime(getApplication(), anime)
+            repo.deleteAnime(getApplication(), anime)
         }
     }
 }

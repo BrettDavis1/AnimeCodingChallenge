@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.animecodingchallenge.R
 import com.example.animecodingchallenge.databinding.FragmentSearchAnimeBinding
 import com.example.animecodingchallenge.viewmodel.SearchAnimeFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchAnimeFragment : Fragment() {
     private lateinit var binding: FragmentSearchAnimeBinding
     private val viewModel by viewModels<SearchAnimeFragmentViewModel>()

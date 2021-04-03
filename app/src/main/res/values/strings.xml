@@ -7,7 +7,7 @@
     <string name="tv_title">Title: %s</string>
     <string name="tv_end_date">End Date: %s</string>
     <string name="tv_start_date">Start Date: %s</string>
-    <string name="tv_score">Score: %d</string>
+    <string name="tv_score">Score: %.2f</string>
     <string name="tv_type">Type: %s</string>
     <string name="tv_synopsis">Synopsis: %s</string>
     <string name="unfavorite">Unfavorite</string>

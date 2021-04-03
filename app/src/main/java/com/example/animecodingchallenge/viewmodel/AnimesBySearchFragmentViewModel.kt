@@ -5,20 +5,24 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.animecodingchallenge.model.Anime
 import com.example.animecodingchallenge.repo.AnimeRepo
+import com.example.animecodingchallenge.repo.AnimeRepoHilt
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AnimesBySearchFragmentViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class AnimesBySearchFragmentViewModel @Inject constructor(private val repo: AnimeRepoHilt,application: Application) : AndroidViewModel(application) {
 
     fun saveAnime(anime: Anime) {
         viewModelScope.launch(Dispatchers.IO) {
-            AnimeRepo.saveAnime(getApplication(), anime)
+            repo.saveAnime(getApplication(), anime)
         }
     }
 
     fun deleteAnime(anime: Anime) {
         viewModelScope.launch(Dispatchers.IO) {
-            AnimeRepo.deleteAnime(getApplication(), anime)
+            repo.deleteAnime(getApplication(), anime)
         }
     }
 }

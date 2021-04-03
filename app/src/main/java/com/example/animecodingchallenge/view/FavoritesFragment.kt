@@ -15,7 +15,9 @@ import com.example.animecodingchallenge.adapter.AnimeListener
 import com.example.animecodingchallenge.databinding.FragmentFavoritesBinding
 import com.example.animecodingchallenge.model.Anime
 import com.example.animecodingchallenge.viewmodel.FavoritesFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
     private lateinit var binding: FragmentFavoritesBinding
     private val viewModel by viewModels<FavoritesFragmentViewModel>()

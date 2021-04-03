@@ -15,7 +15,9 @@ import com.example.animecodingchallenge.adapter.AnimeListener
 import com.example.animecodingchallenge.databinding.FragmentAnimesBySearchBinding
 import com.example.animecodingchallenge.model.Anime
 import com.example.animecodingchallenge.viewmodel.AnimesBySearchFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnimesBySearchFragment : Fragment() {
     private lateinit var binding: FragmentAnimesBySearchBinding
     private val arguments by navArgs<AnimesBySearchFragmentArgs>()
